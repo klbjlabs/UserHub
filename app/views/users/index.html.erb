@@ -1,2 +1,22 @@
 <h1>UserHub Project</h1>
 <p>All users list here</p>
+<% @users.each do |u| %>
+  <%= u.email %> <br>
+<% end %>
+
+<%= form_for @user do |f| %>
+
+  <div class="control-group">
+  	<%= f.label :email%>
+  	<div class="controls">
+  		<%= f.text_area :email, cols: "30" %>
+  	</div>
+  </div>
+
+  <div class="form-actions">
+  	<%= f.submit nil %>
+  	<%= link_to 'Cancel', users_path %>
+  </div>
+
+<% end %>
+
